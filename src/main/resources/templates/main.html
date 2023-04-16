@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Предложения</title>
+</head>
+<body>
+<h1>ОПА! Вы авторизованы</h1>
+<h2 th:text="'Имя пользователя: ' + ${username}"/>
+<br><br>
+<th:block th:if="${offer} != null">
+    <form method="post" action="/main">
+        <p th:text="${offer.getTitle()}"/>
+        <p th:text="${offer.getContent()}"/>
+        <select id="select-form" name="answer">
+            <option value="yes">Да</option>
+            <option value="no">Нет</option>
+            <option value="later">Позже</option>
+        </select>
+        <input name="offerId" hidden="hidden" type="text" th:value="${offerId}" style="color: transparent">
+        <button type="submit">Отправить</button>
+    </form>
+</th:block>
+<th:block th:unless="${offer} != null">
+    <p>Нету доступных офферов</p>
+</th:block>
+</body>
+</html>
