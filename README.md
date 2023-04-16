@@ -51,7 +51,7 @@
 - Spring DevTools.
 - Lombok.
 - java-jwt (GroupID: com.auth0).
-- PostgreSql.
+- PostgreSql + pgAdmin.
 
 ## Как запустить
 
